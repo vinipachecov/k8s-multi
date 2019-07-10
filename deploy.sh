@@ -10,7 +10,7 @@ docker push vinipachecov/multi-worker:latest
 docker push vinipachecov/multi-client:$SHA
 docker push vinipachecov/multi-server:$SHA
 docker push vinipachecov/multi-worker:$SHA
-kubectl apply -f k8s
+kubectl apply -f k8s/
 kubectl set image deployments/server-deployment server=vinipachecov/multi-server:$SHA
 kubectl set image deployments/client-deployment client=vinipachecov/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=vinipachecov/multi-worker:$SHA
