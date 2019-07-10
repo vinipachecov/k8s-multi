@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: worker
+  template:
+    metadata:
+      labels:
+        component: worker
+    #  configure what this pod is running
+    spec:
+      containers:
+        # one container
+        - name: worker
+          image: vinipachecov/multi-worker
+          env:
+            # set the cluster-ip-service to connect to redis
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: '6379'            
+                
+
