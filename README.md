@@ -27,3 +27,8 @@ helm init --service-account tiller --upgrade
 install nginx-ingress
 
 helm install stable/nginx-ingress --name my-nginx --set rbac.create=true
+
+install cert-manager
+https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html
+
+create an issuer, and cert objects to handle ssl certification

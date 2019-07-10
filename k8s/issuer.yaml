@@ -1,0 +1,15 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: 'vinipachecov@gmail.com'      
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    http01: {}
+
+
+# describe where our issuer should go to get our certificate
+# it should go to lets encrypt
