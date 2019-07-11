@@ -7,7 +7,7 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: vinipachecov.online
+  commonName: k8s-multi.com
   dnsNames:
     - vinipachecov.online
     - www.vinipachecov.online
