@@ -12,6 +12,12 @@ build:
         '**/*.js': .
         '**/*.css': .
         '**/*.html': .
+    - image: viniapchecov/multi-server
+      context: server
+      docker:
+        dockerfile: dev.Dockerfile
+      sync:
+        '**/*.js': .
 deploy:
   kubectl:
     manifests:
